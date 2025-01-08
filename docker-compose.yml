@@ -1,0 +1,7 @@
+services:
+  driplet:
+    image: dakusodo/driplet:latest
+    ports:
+      - "4719:4719"
+    volumes:
+      - ./data:/app/data
