@@ -94,15 +94,26 @@ const ws = new WebSocket('ws://localhost:4719/default?token=your-jwt-token');
 ### Global
 
 `BindAddress`: Server bind address (default: "0.0.0.0")
+
 `Port`: Server port (default: 4719)
+
+`LogFile`: Log file path (default: "")
+
+`LogLevel`: Log level (default: "normal", options: "normal", "debug")
 
 ### Endpoints
 
 Each endpoint requires:
 
 `Name`: Endpoint identifier
+
 `APISecret`: Secret for validating HTTP API requests
+
 `JWTSecret`: Secret for validating client JWT tokens
+
+All these values can be overridden by environment variables by prefixing them with `DRIPLET_` and converting them to uppercase.
+
+For example, `BindAddress` can be overridden by setting `DRIPLET_BINDADDRESS`.
 
 ## WebSocket protocol
 
