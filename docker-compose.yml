@@ -1,7 +1,8 @@
 services:
   driplet:
-    image: dakusodo/driplet:latest
+    image: make0x20/driplet:latest
     ports:
       - "4719:4719"
     volumes:
-      - ./data:/app/data
+      - ./driplet:/app/config
+    command: ["./driplet", "-config", "config/config.toml"]
